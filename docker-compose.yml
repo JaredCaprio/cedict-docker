@@ -1,0 +1,17 @@
+version: "3"
+services:
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: cedict
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:5000
+    environment:
+      - MONGO_URI=mongodb://db:27017/cedict
