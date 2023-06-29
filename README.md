@@ -1,4 +1,4 @@
-# Project Name
+# cedict-docker
 
 An api for the [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict) using docker to contain the mongo database and node server
 
