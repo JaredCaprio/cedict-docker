@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "dev": "nodemon --max-old-space-size=4096 index.js",
+    "start": "node --max-old-space-size=4096 index.js"
   },
   "author": "Jared Caprio",
   "license": "ISC",

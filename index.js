@@ -12,7 +12,7 @@ dotenv.config({ path: "./.env" });
 dbConnect();
 
 //init dictionary
-/* checkDbForDocs(); */
+checkDbForDocs();
 
 app.use("/", require("./routes/index"));
 app.use("/api", require("./routes/api"));
