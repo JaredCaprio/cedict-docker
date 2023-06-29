@@ -4,7 +4,7 @@ const dbConnect = require("./Db/db-connection");
 const app = express();
 const dotenv = require("dotenv");
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8080;
 
 dotenv.config({ path: "./.env" });
 
@@ -12,8 +12,9 @@ dotenv.config({ path: "./.env" });
 dbConnect();
 
 //init dictionary
-checkDbForDocs();
+/* checkDbForDocs(); */
 
+app.use("/", require("./routes/index"));
 app.use("/api", require("./routes/api"));
 
 app.listen(PORT, () => {

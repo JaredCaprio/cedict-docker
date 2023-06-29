@@ -22,7 +22,6 @@ module.exports = {
     word.forEach((word) => {
       word.pronunciation = processPinyin(word.pronunciation);
     });
-    console.log(word);
     res.json(word);
   },
   searchByPinyin: async (req, res) => {
@@ -44,6 +43,9 @@ module.exports = {
     });
     str = `[${newStr.join(" ")}]`;
     const results = await Word.find({ pronunciation: str });
+    results.forEach((result) => {
+      result.pronunciation = processPinyin(result.pronunciation);
+    });
     res.json(results);
   },
 };
